@@ -9,11 +9,9 @@ export const App = () => {
     return (
         <div>
             <Header />
-            <Hero />
             <ListenNow />
-            <RecentEpisodes />
-            <About />
-            <Contact />
+            {/* <About /> */}
+            {/* <Contact /> */}
         </div>
     );
 };

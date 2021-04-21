@@ -1,9 +1,19 @@
-import React from "react";
+import { Social } from "./Social";
+
+import "./Header.scss";
 
 export const Header = () => {
     return (
         <header>
-            <h1>Health Science Coach</h1>
+            <div className="header-top">
+                <h1>
+                    Health
+                    <br /> Science
+                    <br /> Coach
+                </h1>
+                <Social />
+            </div>
+
             <nav>
                 <ul>
                     <li>
@@ -13,11 +23,13 @@ export const Header = () => {
                         <a href="#about">About</a>
                     </li>
                     <li>
+                        <a href="#about">Sponsors</a>
+                    </li>
+                    <li>
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </nav>
-            <div>Social Links</div>
         </header>
     );
 };
