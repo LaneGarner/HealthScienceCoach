@@ -54,7 +54,7 @@ export const ListenNow = () => {
                             </div>
                             <div>
                                 <h2>Listen Now</h2>
-                                <strong>Now playing:</strong>{" "}
+                                <strong>Now playing: </strong>{" "}
                                 {currentPodcast.title[0]}{" "}
                                 <Moment format="dddd, MMMM Do YYYY">
                                     {currentPodcast.pubDate[0]}
