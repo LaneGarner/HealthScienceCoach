@@ -4,7 +4,8 @@ import { parseString } from "xml2js";
 import ReactAudioPlayer from "react-audio-player";
 import Moment from "react-moment";
 import { FaPlay } from "react-icons/fa";
-import { GrBackTen, GrForwardTen } from "react-icons/gr";
+
+import { Logo } from "../img/Logo";
 
 import "./ListenNow.scss";
 
@@ -28,6 +29,7 @@ export const ListenNow = () => {
     }, []);
 
     const handlePlayNewPodcast = (podcast) => {
+        setCurrentPodcast("");
         setCurrentPodcast(podcast);
         setAutoPlay(true);
     };
@@ -42,11 +44,14 @@ export const ListenNow = () => {
                 {currentPodcast !== "" && isLoaded && (
                     <div className="now-playing">
                         <div className="now-playing-content">
-                            <img
+                            {/* <img
                                 src={currentPodcast["itunes:image"][0].$.href}
                                 alt="health science coach logo"
                                 className="podcast-logo"
-                            />
+                            /> */}
+                            <div style={{ padding: "1em" }}>
+                                <Logo color="black" width="200px" />
+                            </div>
                             <div>
                                 <h2>Listen Now</h2>
                                 <strong>Now playing:</strong>{" "}
@@ -64,8 +69,6 @@ export const ListenNow = () => {
                                 autoPlay={autoPlay}
                             />
                         </div>
-                        {/* <GrBackTen /> */}
-                        {/* <GrForwardTen /> */}
                     </div>
                 )}
                 <ul className="episodes-list" style={{ listStyle: "none" }}>
