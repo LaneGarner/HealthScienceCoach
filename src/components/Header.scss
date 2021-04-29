@@ -28,7 +28,7 @@ nav {
 
 .header-top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     justify-items: center;
     margin-bottom: 1em;
@@ -38,11 +38,15 @@ nav {
     }
     .social-links {
         padding: 0;
-        margin-right: 30px;
+        margin-right: 1em;
+        margin-top: 1em;
         svg {
             font-size: 1.9em;
             margin: auto 0.4em;
             color: #666;
+            &:hover {
+                color: #43cea2; /* fallback for old browsers */
+            }
         }
     }
 }
