@@ -1,14 +1,46 @@
 import { useState } from "react";
+import TextareaAutosize from "react-textarea-autosize";
+
 import "./Contact.scss";
+
+const encode = (data) => {
+    return Object.keys(data)
+        .map(
+            (key) =>
+                encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+};
 
 export const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(`name: ${name} email: ${email} message: ${message}`);
+    // };
+
     const handleSubmit = (e) => {
+        // let dataPack = { "name": name, "email": email, "message": message }
+        // console.log("dataPack", dataPack)
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({
+                "form-name": "contact",
+                name: name,
+                email: email,
+                message: message,
+            }),
+        })
+            .then(() => alert("Success!"))
+            .catch((error) => alert(error));
+
+        // setSuccess(true);
+
         e.preventDefault();
-        console.log(`name: ${name} email: ${email} message: ${message}`);
     };
     return (
         <div className="page-container">
@@ -18,7 +50,7 @@ export const Contact = () => {
                 nobis explicabo accusantium. Expedita libero tenetur eius,
                 blanditiis commodi soluta hic?
             </p>
-            <form data-netlify="true" name="contact" method="POST">
+            <form name="contact" method="POST" onSubmit={handleSubmit}>
                 <label htmlFor="name">
                     Name:
                     <input
@@ -42,10 +74,9 @@ export const Contact = () => {
                 </label>
                 <label htmlFor="message">
                     Message:
-                    <input
+                    <TextareaAutosize
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        type="text"
                         name="message"
                         placeholder="Enter your message"
                     />

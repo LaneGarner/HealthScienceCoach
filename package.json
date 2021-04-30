@@ -18,6 +18,7 @@
     "react-rss": "^2.0.0",
     "react-rss-podcast-player": "^1.0.0",
     "react-scripts": "4.0.3",
+    "react-textarea-autosize": "^8.3.2",
     "web-vitals": "^1.0.1",
     "xml2js": "^0.4.23"
   },

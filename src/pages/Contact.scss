@@ -7,8 +7,10 @@ form {
         flex-direction: column;
     }
     input[type="text"],
-    input[type="email"] {
+    input[type="email"],
+    textarea {
         width: 50%;
+        resize: none;
     }
     button {
         width: 10em;
