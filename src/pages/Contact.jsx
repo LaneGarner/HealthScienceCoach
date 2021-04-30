@@ -18,7 +18,7 @@ export const Contact = () => {
                 nobis explicabo accusantium. Expedita libero tenetur eius,
                 blanditiis commodi soluta hic?
             </p>
-            <form netlify name="contact" method="POST" onSubmit={handleSubmit}>
+            <form netlify name="contact" method="POST">
                 <label htmlFor="name">
                     Name:
                     <input
