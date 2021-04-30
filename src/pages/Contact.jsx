@@ -43,7 +43,7 @@ export const Contact = () => {
         e.preventDefault();
     };
     return (
-        <div className="page-container">
+        <div className="page-container contact-container">
             <h1>Contact</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
@@ -60,6 +60,7 @@ export const Contact = () => {
                         name="name"
                         placeholder="Enter your name"
                         required
+                        autoFocus
                     />
                 </label>
                 <label htmlFor="email">

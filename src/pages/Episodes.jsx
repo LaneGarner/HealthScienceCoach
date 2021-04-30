@@ -9,7 +9,7 @@ export const Episodes = () => {
     const { podcasts } = useContext(StoreContext);
     return (
         <div className="page-container">
-            <h1>Podcasts</h1>
+            <h1>Podcast Episodes</h1>
             {podcasts.map((pod) => (
                 <div className="episode-card" key={pod.guid[0]["_"]}>
                     <img

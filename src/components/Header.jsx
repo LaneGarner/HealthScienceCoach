@@ -25,6 +25,7 @@ export const Header = () => {
                             exact={true}
                             activeClassName="is-active"
                             to="/"
+                            // data-text="Home"
                         >
                             Home
                         </NavLink>
