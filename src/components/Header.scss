@@ -32,6 +32,10 @@ nav {
     justify-content: space-between;
     justify-items: center;
     margin-bottom: 1em;
+    a {
+        text-decoration: none;
+        color: black;
+    }
     h1 {
         padding: 0 20px 0;
         margin: 0;

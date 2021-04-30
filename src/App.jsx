@@ -1,14 +1,15 @@
-import { Logo } from "./img/Logo";
+import { useEffect, useContext } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import { Header } from "./components/Header";
-import { ListenNow } from "./components/ListenNow";
+import { Router } from "./Router";
+import { Header } from "./components/Header.jsx";
+import { StoreContext } from "./Store";
 
 export const App = () => {
     return (
-        <div>
-            {/* <Logo color="black" width="300px" /> */}
+        <BrowserRouter>
             <Header />
-            <ListenNow />
-        </div>
+            <Router />
+        </BrowserRouter>
     );
 };

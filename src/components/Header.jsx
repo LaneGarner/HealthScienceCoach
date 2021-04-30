@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Social } from "./Social";
 
 import "./Header.scss";
@@ -6,27 +8,32 @@ export const Header = () => {
     return (
         <header>
             <div className="header-top">
-                <h1>
-                    Health
-                    <br /> Science
-                    <br /> Coach
-                </h1>
+                <Link to="/">
+                    <h1>
+                        Health
+                        <br /> Science
+                        <br /> Coach
+                    </h1>
+                </Link>
                 <Social />
             </div>
 
             <nav>
                 <ul>
                     <li>
-                        <a href="#episodes">Episodes</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="#about">About</a>
+                        <Link to="/episodes">Episodes</Link>
                     </li>
                     <li>
-                        <a href="#about">Sponsors</a>
+                        <Link to="/about">About</Link>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <Link to="/sponsors">Sponsors</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
             </nav>
