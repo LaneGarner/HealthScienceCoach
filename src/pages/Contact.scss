@@ -1,0 +1,16 @@
+form {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="text"],
+    input[type="email"] {
+        width: 50%;
+    }
+    button {
+        width: 10em;
+    }
+}
