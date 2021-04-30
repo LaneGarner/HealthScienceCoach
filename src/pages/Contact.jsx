@@ -18,7 +18,7 @@ export const Contact = () => {
                 nobis explicabo accusantium. Expedita libero tenetur eius,
                 blanditiis commodi soluta hic?
             </p>
-            <form netlify name="contact" method="POST">
+            <form data-netlify="true" name="contact" method="POST">
                 <label htmlFor="name">
                     Name:
                     <input
@@ -50,7 +50,7 @@ export const Contact = () => {
                         placeholder="Enter your message"
                     />
                 </label>
-                <button type="submit">Submit</button>
+                <button type="submit">Send</button>
             </form>
         </div>
     );
