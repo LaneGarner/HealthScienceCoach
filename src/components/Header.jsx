@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { Social } from "./Social";
 
@@ -21,19 +21,33 @@ export const Header = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <NavLink
+                            exact={true}
+                            activeClassName="is-active"
+                            to="/"
+                        >
+                            Home
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/episodes">Episodes</Link>
+                        <NavLink activeClassName="is-active" to="/episodes">
+                            Episodes
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/about">About</Link>
+                        <NavLink activeClassName="is-active" to="/about">
+                            About
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/sponsors">Sponsors</Link>
+                        <NavLink activeClassName="is-active" to="/sponsors">
+                            Sponsors
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <NavLink activeClassName="is-active" to="/contact">
+                            Contact
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

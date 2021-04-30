@@ -1,19 +1,26 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { parseString } from "xml2js";
+import { useEffect, useContext } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Moment from "react-moment";
 import { FaPlay } from "react-icons/fa";
+import axios from "axios";
+import { parseString } from "xml2js";
 
 import { Logo } from "../img/Logo";
+import { StoreContext } from "../Context";
 
 import "./ListenNow.scss";
 
 export const ListenNow = () => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [podcasts, setPodcasts] = useState([]);
-    const [currentPodcast, setCurrentPodcast] = useState("");
-    const [autoPlay, setAutoPlay] = useState(false);
+    const {
+        isLoaded,
+        setIsLoaded,
+        podcasts,
+        setPodcasts,
+        currentPodcast,
+        setCurrentPodcast,
+        autoPlay,
+        setAutoPlay,
+    } = useContext(StoreContext);
 
     useEffect(() => {
         axios
@@ -33,10 +40,6 @@ export const ListenNow = () => {
         setCurrentPodcast(podcast);
         setAutoPlay(true);
     };
-
-    // useEffect(() => {
-
-    // }, [podcasts])
 
     return (
         <section>
@@ -98,7 +101,6 @@ export const ListenNow = () => {
                                         <h3>{podcast.title[0]}</h3>
                                     </div>
                                 </div>
-                                {/* <hr /> */}
                             </li>
                         ))
                     ) : (

@@ -1,9 +1,8 @@
 .podcast-player {
     max-width: 800px;
     min-width: 20em;
-    // height: 30em;
     margin: auto;
-    border: black solid 1px;
+    border: #afafaf solid 1px;
     border-radius: 0.5em;
     li {
         border-bottom: 1px solid #333;
@@ -37,8 +36,6 @@
 }
 
 .episode-listing {
-    // display: flex;
-    // align-items: center;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -70,7 +67,7 @@
 }
 
 .episodes-list {
-    height: 20em;
+    height: 30em;
     overflow-y: scroll;
 }
 
