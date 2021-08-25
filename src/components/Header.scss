@@ -1,73 +1,71 @@
 header {
-    margin-top: 1em;
-    margin-bottom: 2em;
-    h1 {
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 2em;
-    }
-    .is-active {
-        font-weight: bold;
-    }
-    // .is-active::after {
-    //     content: attr(data-text);
-    //     content: attr(data-text) / "";
-    //     height: 0;
-    //     visibility: hidden;
-    //     overflow: hidden;
-    //     user-select: none;
-    //     pointer-events: none;
-    //     font-weight: bold;
+  margin-top: 1em;
+  padding-bottom: 2em;
 
-    //     .is-active {
-    //         display: none;
-    //     }
-    // }
-}
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 2em;
+  }
 
-nav {
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    }
-    li {
-        padding-right: 3em;
-        &:nth-last-of-type(1) {
-            padding-right: 0;
-        }
-    }
-}
-
-.header-top {
+  .header-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     justify-items: center;
     margin-bottom: 1em;
     a {
-        text-decoration: none;
-        color: black;
+      text-decoration: none;
+      color: black;
     }
     h1 {
-        padding: 0 20px 0;
-        margin: 0;
+      padding: 0 20px 0;
+      margin: 0;
     }
     .social-links {
-        padding: 0;
-        margin-right: 1em;
-        margin-top: 1em;
-        svg {
-            font-size: 1.9em;
-            margin: auto 0.4em;
-            color: #666;
-            &:hover {
-                color: dodgerblue;
-            }
+      padding: 0;
+      margin-right: 1em;
+      margin-top: 1em;
+      svg {
+        font-size: 1.9em;
+        margin: auto 0.4em;
+        color: #666;
+        &:hover {
+          color: dodgerblue;
         }
+      }
     }
+  }
+
+  .is-active {
+    color: dodgerblue;
+    &:hover {
+      color: dodgerblue;
+    }
+  }
+}
+
+nav {
+  position: sticky;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: #454545;
+      }
+    }
+  }
+  li {
+    padding-right: 3em;
+    font-size: 1.1em;
+    &:nth-last-of-type(1) {
+      padding-right: 0;
+    }
+  }
 }

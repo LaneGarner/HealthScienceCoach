@@ -1,0 +1,68 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .tagline {
+    margin-top: 2em;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    color: white;
+    background: rgba(0, 0, 0, 0.815);
+    text-align: center;
+    padding: 1em;
+    width: 900px;
+  }
+
+  .focus-list {
+    width: 700px;
+    font-size: 1.5em;
+    background-color: white;
+    padding: 0.5em;
+    // border: black 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .graduation {
+    background-image: url("../img/graduation.jpg");
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-attachment: fixed;
+  }
+  .focus-list {
+    // padding-top: 200px;
+    // padding-bottom: 150px;
+    // display: flex;
+    // justify-content: center;
+    // justify-content: space-around;
+    // flex-direction: column;
+    // align-items: flex-end;
+  }
+  .focus-list-right {
+    // padding-left: 100px;
+    // width: 1000px;
+    span:nth-of-type(1) {
+      font-size: 1.5em;
+      font-weight: bold;
+      // text-align: center;
+    }
+    span:nth-of-type(2) {
+      // display: block;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    ul {
+      margin-top: 2em;
+    }
+    li {
+      font-size: 1em;
+      padding-bottom: 0.5em;
+    }
+  }
+}

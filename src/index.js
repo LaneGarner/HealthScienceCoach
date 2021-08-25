@@ -7,8 +7,8 @@ import { App } from "./App.jsx";
 import "./index.scss";
 
 ReactDOM.render(
-    <StoreProvider>
-        <App />
-    </StoreProvider>,
-    document.getElementById("root")
+  <StoreProvider>
+    <App />
+  </StoreProvider>,
+  document.getElementById("root")
 );
