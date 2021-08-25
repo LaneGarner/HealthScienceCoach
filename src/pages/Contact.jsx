@@ -23,6 +23,7 @@ export const Contact = () => {
   const [info, setInfo] = useState("");
   const [photo, setPhoto] = useState("");
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const [showLongForm, setShowLongForm] = useState(false);
 
@@ -36,7 +37,7 @@ export const Contact = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "health science coach contact form",
+        "form-name": "health-science-coach-contact-form",
         name: name,
         email: email,
         profession: profession,
@@ -50,14 +51,17 @@ export const Contact = () => {
         photo: photo,
         message: message,
       }),
-    })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+    }).then(() => setSuccess(true));
+    // .catch((error) => alert(error));
 
     // setSuccess(true);
 
     e.preventDefault();
   };
+
+  if (success === true) {
+    return <div>Success</div>;
+  }
 
   return (
     <div className="page-container contact-container">
