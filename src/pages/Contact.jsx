@@ -37,7 +37,7 @@ export const Contact = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "health-science-coach-contact-form",
+        "form-name": "contact-form",
         name: name,
         email: email,
         profession: profession,
@@ -53,8 +53,6 @@ export const Contact = () => {
       }),
     }).then(() => setSuccess(true));
     // .catch((error) => alert(error));
-
-    // setSuccess(true);
 
     e.preventDefault();
   };
