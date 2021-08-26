@@ -132,18 +132,11 @@ export const Contact = () => {
             </label>
             <label htmlFor="college">
               College(s) and Degrees
-              <TextareaAutosize value={college} onChange={(e) => setCollege(e.target.value)} type="text" name="college" placeholder="Enter your answer" required />
+              <TextareaAutosize value={college} onChange={(e) => setCollege(e.target.value)} type="text" name="college" placeholder="Enter your answer" />
             </label>
             <label htmlFor="certifications">
               Certifications / Specialties
-              <TextareaAutosize
-                value={certifications}
-                onChange={(e) => setCertifications(e.target.value)}
-                type="text"
-                name="certifications"
-                placeholder="Enter your answer"
-                required
-              />
+              <TextareaAutosize value={certifications} onChange={(e) => setCertifications(e.target.value)} type="text" name="certifications" placeholder="Enter your answer" />
             </label>
             <label htmlFor="phone">
               Phone number
@@ -152,11 +145,11 @@ export const Contact = () => {
             {/* week / day */}
             <label htmlFor="honors">
               Honors / Awards / Scholarships etc.
-              <input value={honors} onChange={(e) => setHonors(e.target.value)} type="text" name="honors" placeholder="Enter your answer" required />
+              <input value={honors} onChange={(e) => setHonors(e.target.value)} type="text" name="honors" placeholder="Enter your answer" />
             </label>
             <label htmlFor="linkedIn">
               LinkedIn Profile - (research about your career) and student questions
-              <input value={linkedIn} onChange={(e) => setLinkedIn(e.target.value)} type="text" name="linkedIn" placeholder="Enter your answer" required />
+              <input value={linkedIn} onChange={(e) => setLinkedIn(e.target.value)} type="text" name="linkedIn" placeholder="Enter your answer" />
             </label>
             <label htmlFor="photo">
               Upload a photo of you at work for video thumbnail
