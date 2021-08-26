@@ -2,6 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2em;
   label {
     font-weight: bold;
     display: flex;
@@ -60,10 +61,17 @@ form {
     flex-direction: column;
     align-items: center;
   }
-  .final-paragraph {
-    margin-top: 2em;
+  .final-p-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
     margin-bottom: 3em;
+  }
+  .final-paragraph {
     font-size: 1.5em;
+    text-align: center;
+    width: 500px;
   }
   .about-interview {
     display: flex;
@@ -116,6 +124,11 @@ form {
         outline: none;
         border: 1px solid dodgerblue;
       }
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 }

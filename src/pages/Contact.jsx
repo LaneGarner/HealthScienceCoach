@@ -90,7 +90,7 @@ export const Contact = () => {
           <div className="youtube-link">
             <a href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" noreferrer="true">
               <FaYoutube className="youtube-icon" />
-              Here are some interviews I've previously done
+              Here are some previous interviews
             </a>
           </div>
           <div className="about-interview">
@@ -106,17 +106,15 @@ export const Contact = () => {
               <li>What you wish you knew as a high school junior that would help you in your career now</li>
             </ul>
           </div>
-          <p className="final-paragraph">Also, please share this with anyone else that you think would be fun to interview about their career path.</p>
+          <div className="final-p-container">
+            <p className="final-paragraph">Please share this with anyone else you think would be fun to interview about their career path.</p>
+          </div>
           {/* </div> */}
         </section>
       ) : (
         <>
           <p className="center">Use this form to provide your feedback or get in touch.</p>
-          <p className="center">
-            If you're interested in sharing your "WHY" <br />
-            click the button above and fill out the guest speaker form.
-          </p>
-          <p>Thanks!</p>
+          <p className="center">If you're interested in sharing your "WHY" click the button above and fill out the guest speaker form.</p>
         </>
       )}
 
@@ -157,7 +155,7 @@ export const Contact = () => {
               <input value={honors} onChange={(e) => setHonors(e.target.value)} type="text" name="honors" placeholder="Enter your answer" />
             </label>
             <label htmlFor="linkedIn">
-              LinkedIn Profile - (research about your career) and student questions
+              LinkedIn Profile
               <input value={linkedIn} onChange={(e) => setLinkedIn(e.target.value)} type="text" name="linkedIn" placeholder="Enter your answer" />
             </label>
             <label htmlFor="photo">
