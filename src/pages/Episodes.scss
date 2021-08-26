@@ -2,17 +2,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .right-content {
+    margin-top: 1em;
+    margin-left: 0.5em;
+  }
   h1 {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
   .episode-card {
     width: 800px;
     display: flex;
-    margin: 3em;
-    padding-bottom: 2em;
+    margin-bottom: 2.5em;
+    padding-bottom: 2.5em;
+    // padding-top: 2em;
     border-bottom: solid #333 1px;
     img {
       border-radius: 0.5em;
+    }
+    &:nth-last-of-type(1) {
+      border-bottom: none;
     }
   }
 }

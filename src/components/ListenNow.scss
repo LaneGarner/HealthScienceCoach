@@ -40,10 +40,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // background-color: #f9484a;
-  // background: -webkit-linear-gradient(to right, #f9484a, #fbd72b); /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(315deg, #f9484a 0%, #66fb2b 74%);
-  // background: linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
   background: #f0f3f4;
   padding: 1em;
 }
@@ -67,11 +63,6 @@
     background: #43cea2; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #185a9d, #43cea2); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, royalblue, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    // background: -webkit-linear-gradient(to right, #185a9d, #43cea2); /* Chrome 10-25, Safari 5.1-6 */
-    // background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    // background-color: #f9484a;
-    // background: -webkit-linear-gradient(to right, #fbd72b, #f9484a); /* Chrome 10-25, Safari 5.1-6 */
-    // background: linear-gradient(315deg, #fbd72b 0%, red 74%);
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
   }
@@ -128,7 +119,6 @@
 .podcast-host[tooltip]::before {
   content: attr(tooltip);
   position: absolute;
-  // margin-top: 20px;
   bottom: 0;
   background: #555;
   color: white;

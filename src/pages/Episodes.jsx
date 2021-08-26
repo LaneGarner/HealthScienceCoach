@@ -27,8 +27,8 @@ export const Episodes = () => {
         podcasts.map((pod) => (
           <div className="episode-card" key={pod.guid[0]["_"]}>
             <img src={pod["itunes:image"][0].$.href} alt="health science coach logo" className="podcast-logo" />
-            <div>
-              <Moment date={pod.pubDate[0]} className="podcast-date" format="dddd, MMMM Do YYYY" />
+            <div className="right-content">
+              <Moment date={pod.pubDate[0]} className="podcast-date date" format="dddd, MMMM Do YYYY" />
               <Link to={`/podcast/${pod.guid[0]["_"]}`}>
                 <h2>{pod.title}</h2>
               </Link>
