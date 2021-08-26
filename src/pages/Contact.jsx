@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { FaYoutube } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 import "./Contact.scss";
 
@@ -27,12 +28,15 @@ export const Contact = () => {
 
   const [showLongForm, setShowLongForm] = useState(false);
 
+  const history = useHistory();
+
   // const handleSubmit = (e) => {
   //     e.preventDefault();
   //     console.log(`name: ${name} email: ${email} message: ${message}`);
   // };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -52,13 +56,18 @@ export const Contact = () => {
         message: message,
       }),
     }).then(() => setSuccess(true));
-    // .catch((error) => alert(error));
-
-    e.preventDefault();
   };
 
-  if (success === true) {
-    return <div>Success</div>;
+  //show success message & redirect to home if success
+  success && setTimeout(() => history.push("/"), 5000);
+  if (success) {
+    return (
+      <div className="success-container">
+        <h1>✅</h1>
+        <h1>Success</h1>
+        <p>Thanks for getting in touch. You will be redirected in 5 seconds.</p>
+      </div>
+    );
   }
 
   return (
