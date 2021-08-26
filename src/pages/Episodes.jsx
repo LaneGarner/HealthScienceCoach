@@ -18,7 +18,6 @@ export const Episodes = () => {
           setPodcasts(result.rss.channel[0].item);
         });
       });
-      // .then(setIsLoaded(true));
     }
   }, []);
   return (
@@ -29,9 +28,7 @@ export const Episodes = () => {
           <div className="episode-card" key={pod.guid[0]["_"]}>
             <img src={pod["itunes:image"][0].$.href} alt="health science coach logo" className="podcast-logo" />
             <div>
-              <Moment className="podcast-date" format="dddd, MMMM Do YYYY">
-                {pod.pubDate}
-              </Moment>
+              <Moment date={pod.pubDate[0]} className="podcast-date" format="dddd, MMMM Do YYYY" />
               <Link to={`/podcast/${pod.guid[0]["_"]}`}>
                 <h2>{pod.title}</h2>
               </Link>
