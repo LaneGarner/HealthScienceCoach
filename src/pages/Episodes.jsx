@@ -8,7 +8,7 @@ import "./Episodes.scss";
 export const Episodes = () => {
   const { podcasts } = useContext(StoreContext);
   return (
-    <div className="page-container">
+    <div className="page-container episodes-container">
       <h1>Podcast Episodes</h1>
       {podcasts ? (
         podcasts.map((pod) => (

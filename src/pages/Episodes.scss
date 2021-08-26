@@ -1,8 +1,18 @@
-.episode-card {
-    width: 80%;
+.episodes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 1em;
+  }
+  .episode-card {
+    width: 800px;
     display: flex;
-    margin: 2em;
+    margin: 3em;
+    padding-bottom: 2em;
+    border-bottom: solid #333 1px;
     img {
-        border-radius: 0.5em;
+      border-radius: 0.5em;
     }
+  }
 }
