@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Footer } from "../components/Footer";
 import { GetInTouch } from "../components/GetInTouch";
 import { Hero } from "../components/Hero";
@@ -8,12 +9,19 @@ import "./Home.scss";
 
 export const Home = () => {
   return (
-    <div>
-      <Hero />
-      <ListenNow />
-      <YouTube />
-      <GetInTouch />
-      <Footer />
-    </div>
+    <HomeContainer>
+      <Hero className="section" />
+      <ListenNow className="section" />
+      <YouTube className="section" />
+      <GetInTouch className="section" />
+      <Footer className="section" />
+    </HomeContainer>
   );
 };
+
+const HomeContainer = styled.div`
+  scroll-snap-type: y mandatory;
+  .section {
+    scroll-snap-align: start;
+  }
+`;
