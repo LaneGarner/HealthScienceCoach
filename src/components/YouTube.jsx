@@ -18,7 +18,6 @@ const YouTube = () => {
   };
 
   useEffect(() => getVideos(), []);
-  useEffect(() => console.log(videos), [videos]);
 
   return (
     <div style={{ backgroundColor: theme.colors.lightGrey, display: "flex", flexDirection: "column", alignItems: "center" }}>
