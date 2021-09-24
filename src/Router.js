@@ -2,7 +2,7 @@ import { About } from "./pages/About";
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { Episodes } from "./pages/Episodes";
-import { Sponsors } from "./pages/Sponsors";
+// import { Sponsors } from "./pages/Sponsors";
 import { Podcast } from "./components/Podcast";
 
 import { Switch, Route } from "react-router";

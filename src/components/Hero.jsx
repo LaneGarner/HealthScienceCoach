@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Fancy } from "./Fancy";
 import Graduation from "../img/graduation.jpg";
 import { theme, SmallScreen } from "../theme";
+import { FaCheckCircle } from "react-icons/fa";
 
 export const Hero = () => {
-  console.log("theme", theme.breakpoints.lg);
   return (
     <HeroContainer theme={theme}>
       <div className="graduation">
-        <p className="tagline">Helping students and parents learn about pathways into health care and sports medicine careers</p>
+        <p className="tagline">A podcast to help students and parents learn about pathways into Healthcare and sports medicine careers</p>
         {/* TODO: SMALLER IMAGE */}
         <SmallScreen>
           <img style={{ width: "90%" }} src={Graduation} alt="Graduation" />;
@@ -17,16 +17,27 @@ export const Hero = () => {
 
         <Fancy>
           <div className="focus-list">
-            <div className="focus-list-right">
-              <ul>
-                <li>Careers in Healthcare and Sports Medicine</li>
-                <li>Student Experiences in High School and College</li>
-                <li>University and College programs and degrees</li>
-                <li>Non-Traditional pathways</li>
-                <li>Continuing Education Units</li>
-                <li>Health Career Events, and more</li>
-              </ul>
-            </div>
+            <h3>Listeners will learn about:</h3>
+            <ul>
+              <li>
+                <FaCheckCircle /> Careers in Healthcare and Sports Medicine
+              </li>
+              <li>
+                <FaCheckCircle /> Student Experiences in High School and College
+              </li>
+              <li>
+                <FaCheckCircle /> University and College Programs and Degrees
+              </li>
+              <li>
+                <FaCheckCircle /> Non-Traditional Pathways
+              </li>
+              <li>
+                <FaCheckCircle /> Continuing Education Units
+              </li>
+              <li>
+                <FaCheckCircle /> Health Career Events, and more
+              </li>
+            </ul>
           </div>
         </Fancy>
       </div>
@@ -40,15 +51,18 @@ const HeroContainer = styled.div.attrs((props) => ({ theme: props.theme }))`
   align-items: center;
 
   .tagline {
-    margin-top: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
     font-size: 40px;
     font-weight: 800;
     font-family: "Inter", sans-serif;
     color: white;
-    background: rgba(0, 0, 0, 0.815);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     text-align: center;
     padding: 1em;
     width: 900px;
+    border-radius: 2px;
     @media (max-width: ${theme.breakpoints.m}) {
       font-size: 30px;
       width: 90%;
@@ -64,11 +78,37 @@ const HeroContainer = styled.div.attrs((props) => ({ theme: props.theme }))`
     font-size: 1.5em;
     background-color: white;
     padding: 0.5em;
+    padding-bottom: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 1em;
+    h3 {
+      margin-top: 0.7em;
+    }
+    span:nth-of-type(1) {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    span:nth-of-type(2) {
+      font-size: 1.5em;
+      text-align: center;
+    }
+    ul {
+      margin-top: 1em;
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      font-size: 0.9em;
+      padding-bottom: 0.5em;
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      margin-right: 0.5em;
+    }
     @media (max-width: ${theme.breakpoints.m}) {
-      /* font-size: 30px; */
       width: 90%;
     }
   }
@@ -84,23 +124,5 @@ const HeroContainer = styled.div.attrs((props) => ({ theme: props.theme }))`
     flex-direction: column;
     align-items: center;
     background-attachment: fixed;
-  }
-
-  .focus-list-right {
-    span:nth-of-type(1) {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-    span:nth-of-type(2) {
-      font-size: 1.5em;
-      text-align: center;
-    }
-    ul {
-      margin-top: 2em;
-    }
-    li {
-      font-size: 1em;
-      padding-bottom: 0.5em;
-    }
   }
 `;

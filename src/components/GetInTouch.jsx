@@ -25,6 +25,9 @@ const Container = styled.div`
     margin-bottom: 10px;
     font-size: 5em;
   }
+  a {
+    color: dodgerblue;
+  }
   p {
   }
 `;

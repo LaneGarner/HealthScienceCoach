@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { parseString } from "xml2js";
 
-import "./Episodes.scss";
+import styled from "styled-components";
 
 export const Episodes = () => {
   const { podcasts, setPodcasts } = useContext(StoreContext);
@@ -21,7 +21,7 @@ export const Episodes = () => {
     }
   }, []);
   return (
-    <div className="page-container episodes-container">
+    <EpisodesContainer>
       <h1>Podcast Episodes</h1>
       {podcasts.length ? (
         podcasts.map((pod) => (
@@ -39,6 +39,37 @@ export const Episodes = () => {
       ) : (
         <div>loading...</div>
       )}
-    </div>
+    </EpisodesContainer>
   );
 };
+
+const EpisodesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .right-content {
+    margin-top: 1em;
+    margin-left: 0.5em;
+  }
+  h1 {
+    margin-bottom: 2em;
+  }
+  .episode-card {
+    width: 800px;
+    display: flex;
+    margin-bottom: 2.5em;
+    padding-bottom: 2.5em;
+    border-bottom: solid #333 1px;
+    img {
+      border-radius: 0.5em;
+    }
+    &:nth-last-of-type(1) {
+      border-bottom: none;
+    }
+  }
+`;

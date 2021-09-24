@@ -6,6 +6,7 @@ export const Fancy = ({ children }) => {
 
 const FancyContainer = styled.div`
   background: #ff0000cc;
+  backdrop-filter: blur(5px);
   width: 100vw;
   display: flex;
   flex-direction: column;

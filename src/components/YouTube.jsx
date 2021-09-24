@@ -39,7 +39,11 @@ const YouTube = () => {
       </div>
       <CardStyled AllEpisodes href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg" target="_blank" noreferrer="true">
         <FaVideo style={{ fontSize: "5rem" }} />
-        <p>View all episodes</p>
+        <p style={{ textAlign: "center", marginTop: "0.5em" }}>
+          View all episodes
+          <br />
+          on YouTube
+        </p>
       </CardStyled>
     </div>
   );
