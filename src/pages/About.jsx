@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { Logo } from "../img/Logo";
 
 import "./About.scss";
@@ -7,7 +5,6 @@ import "./About.scss";
 export const About = () => {
   return (
     <div className="page-container about-page">
-      {/* <h1>About</h1> */}
       <Logo width="200px" />
       <p className="hey-coach">"Hey Coach Garner, how do I become a nurse practitioner?"</p>
       <p className="about-description">

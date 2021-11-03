@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Footer = () => {
   return (
     <StyledFooter>
-      <a href="https://lanegarner.dev" target="_blank" noreferrer="true">
+      <a href="https://lanegarner.dev" target="_blank" rel="noreferrer">
         {"<website by BLG />"}
       </a>
     </StyledFooter>

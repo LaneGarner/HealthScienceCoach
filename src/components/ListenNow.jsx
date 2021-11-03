@@ -4,8 +4,8 @@ import Moment from "react-moment";
 import { FaPlay } from "react-icons/fa";
 import axios from "axios";
 import { parseString } from "xml2js";
-import { FaYoutube, FaSpotify } from "react-icons/fa";
-import { SiGooglepodcasts, SiAnchor, SiBreaker, SiPocketcasts, SiApplepodcasts } from "react-icons/si";
+import { FaSpotify } from "react-icons/fa";
+import { SiGooglepodcasts, SiAnchor, SiPocketcasts, SiApplepodcasts } from "react-icons/si";
 
 import { Logo } from "../img/Logo";
 import { StoreContext } from "../Context";
@@ -78,10 +78,8 @@ export const ListenNow = () => {
       <section className="podcast-hosts">
         {PODCAST_HOSTING.map((pod, i) => (
           <article tooltip={pod.name} className="podcast-host" key={i}>
-            {/* <div style={{ width: "50px", height: "50px", background: "black" }} /> */}
             <a href={pod.url} target="blank" noreferrer="true">
               {pod.icon}
-              {/* {pod.name} */}
             </a>
           </article>
         ))}

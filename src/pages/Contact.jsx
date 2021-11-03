@@ -88,7 +88,7 @@ export const Contact = () => {
             under teams meetings.
           </p>
           <div className="youtube-link">
-            <a href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" noreferrer="true">
+            <a href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" rel="noreferrer">
               <FaYoutube className="youtube-icon" />
               Here are some previous interviews
             </a>
