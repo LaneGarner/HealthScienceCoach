@@ -1,0 +1,205 @@
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2em;
+}
+
+form label {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 25em;
+  resize: none;
+  margin-bottom: 2em;
+}
+
+form button {
+  width: 10em;
+}
+
+.success-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5em;
+}
+
+.contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-container .youtube-link {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+.contact-container .youtube-link a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: dodgerblue;
+  font-size: 1.3em;
+}
+
+.contact-container .youtube-link .youtube-icon {
+  font-size: 3em;
+  color: red;
+}
+
+.contact-container h1 {
+  margin-bottom: 0.5em;
+  font-size: 5em;
+}
+
+.contact-container p {
+  max-width: 820px;
+  margin-bottom: 1em;
+}
+
+.contact-container label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-container .final-p-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.contact-container .final-paragraph {
+  font-size: 1.5em;
+  text-align: center;
+  width: 500px;
+}
+
+.contact-container .about-interview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3em;
+  border: solid #333 1px;
+  border-radius: 1em;
+  padding: 2em;
+  width: 500px;
+  margin: 5em auto;
+}
+
+.contact-container .about-interview ul {
+  margin-top: 2em;
+}
+
+.contact-container .about-interview li {
+  max-width: 400px;
+  margin-bottom: 1em;
+}
+
+.contact-container button {
+  margin: auto;
+  border: none;
+  border-radius: 3em;
+  padding: 1em;
+  font-weight: bold;
+  background-color: dodgerblue;
+  color: white;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.contact-container .form-select-button {
+  width: 250px;
+  background: red;
+  cursor: pointer;
+  margin-bottom: 3em;
+}
+
+.contact-container form input,
+.contact-container form input[type="number"],
+.contact-container form textarea {
+  padding: 1em;
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+  border: 1px solid black;
+  width: 400px;
+  margin-bottom: 1.5em;
+}
+
+.contact-container form input:focus,
+.contact-container form input[type="number"]:focus,
+.contact-container form textarea:focus {
+  outline: none;
+  border: 1px solid dodgerblue;
+}
+
+.contact-container form input[type="number"]::-webkit-inner-spin-button,
+.contact-container form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*# sourceMappingURL=Contact.css.map */

@@ -1,0 +1,188 @@
+.podcast-player-container {
+  background-color: #fafafa;
+  padding-top: 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.podcast-player-container h2 {
+  font-size: 5em;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.podcast-player-container p {
+  margin-bottom: 70px;
+  margin-top: 0;
+}
+
+.podcast-player {
+  max-width: 800px;
+  min-width: 20em;
+  margin: auto;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.podcast-player ul {
+  margin: auto;
+}
+
+.podcast-player li {
+  border-bottom: 1px solid #333;
+  margin-bottom: 1em;
+}
+
+.podcast-player li:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+.podcast-player h3 {
+  margin-top: 0.5em;
+}
+
+.player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f0f3f4;
+  padding: 1em;
+}
+
+.episode-listing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+}
+
+.now-playing {
+  color: white;
+}
+
+.now-playing h2 {
+  font-size: 3em;
+  margin-left: 2em;
+}
+
+.now-playing .now-playing-content {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #43cea2;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(royalblue), to(#43cea2));
+  background: linear-gradient(to right, royalblue, #43cea2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+}
+
+.now-playing .now-playing-text {
+  background: rgba(0, 0, 0, 0.267);
+  width: 23em;
+  padding: 2em;
+  margin-left: 2em;
+  border-radius: 0.5em;
+  font-size: 1.3em;
+}
+
+.episodes-list {
+  height: 30em;
+  overflow-y: scroll;
+}
+
+.play-button {
+  cursor: pointer;
+  margin: 2em;
+  color: dodgerblue;
+  font-size: 1.5em;
+}
+
+.podcast-date {
+  color: #6a6a6a;
+  font-style: italic;
+}
+
+.podcast-logo {
+  width: 9em;
+  height: 9em;
+  margin-right: 2em;
+}
+
+.podcast-hosts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 800px;
+  padding-bottom: 5em;
+}
+
+.podcast-host {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.podcast-host[tooltip] {
+  position: relative;
+}
+
+.podcast-host[tooltip]::before {
+  content: attr(tooltip);
+  position: absolute;
+  bottom: 0;
+  background: #555;
+  color: white;
+  font-size: 1em;
+  white-space: nowrap;
+  z-index: 100;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: bottom ease-out 150ms, -webkit-transform ease-out 150ms;
+  transition: bottom ease-out 150ms, -webkit-transform ease-out 150ms;
+  transition: transform ease-out 150ms, bottom ease-out 150ms;
+  transition: transform ease-out 150ms, bottom ease-out 150ms, -webkit-transform ease-out 150ms;
+}
+
+.podcast-host[tooltip]:hover::before {
+  -webkit-transform: scale(1) translateY(35px);
+          transform: scale(1) translateY(35px);
+}
+/*# sourceMappingURL=ListenNow.css.map */
