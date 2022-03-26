@@ -8,7 +8,7 @@ export const About = () => {
       <img 
         src="https://healthsciencecoach.com/img/health-career-podcast.png" 
         alt="Drew Garner hosting health science coach podcast with yellow geometric design in background" 
-        style={{width: "80%"}}
+        style={{maxWidth: '750px', width: "80%"}}
       />
       <p className="hey-coach">"Hey Coach Garner, how do I become a nurse practitioner?"</p>
       <p className="about-description">
