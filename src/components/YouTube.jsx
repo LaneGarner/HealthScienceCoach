@@ -31,7 +31,7 @@ const YouTube = () => {
       <div style={{ display: "grid", gridGap: "30px", gridTemplateColumns: "1fr 1fr" }}>
         {videos && videos.map((video, i) => <ReactPlayer width={400} height={226} key={i} url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} />)}
       </div>
-      <CardStyled AllEpisodes href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg" target="_blank" noreferrer="true">
+      <CardStyled AllEpisodes href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" noreferrer="true">
         <FaVideo style={{ fontSize: "5rem" }} />
         <p style={{ textAlign: "center", marginTop: "0.5em" }}>
           View all episodes
