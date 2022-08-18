@@ -4,9 +4,12 @@ import { FaYoutube, FaVideo } from "react-icons/fa";
 import styled from "styled-components";
 
 import { theme } from "../theme";
+import { useMediaQuery } from "react-responsive";
 
 const YOUTUBE_PLAYLIST_API = "https://www.googleapis.com/youtube/v3/playlistItems";
 const PLAYLIST_ID = "PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v";
+
+const VIDEO_SECTION_MAX_WIDTH = 900;
 
 const YouTube = () => {
   const [videos, setVideos] = useState(null);
@@ -19,8 +22,10 @@ const YouTube = () => {
 
   useEffect(() => getVideos(), []);
 
+  const isColumn = useMediaQuery({ query: `(max-width: ${VIDEO_SECTION_MAX_WIDTH}px)` })
+
   return (
-    <div style={{ backgroundColor: theme.colors.lightGrey, display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <YouTubeStyled style={{ backgroundColor: theme.colors.lightGrey, display: "flex", flexDirection: "column", alignItems: "center" }}>
       <h2 style={{ fontSize: "5em", marginTop: "100px", marginBottom: "10px" }}>YouTube</h2>
       <p style={{ fontSize: "1.2em", marginBottom: "10px" }}>All podcast episodes are also available on YouTube</p>
       <CardStyled YouTube href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg?sub_confirmation=1" target="_blank" noreferrer="true">
@@ -28,8 +33,8 @@ const YouTube = () => {
         <p>Subscribe</p>
       </CardStyled>
       <p style={{ fontWeight: "bold", fontSize: "3em", marginTop: 0, marginBottom: "50px" }}>Recent episodes:</p>
-      <div style={{ display: "grid", gridGap: "30px", gridTemplateColumns: "1fr 1fr" }}>
-        {videos && videos.map((video, i) => <ReactPlayer width={400} height={226} key={i} url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} />)}
+      <div className="video-grid">
+        {videos && videos.map((video, i) => <ReactPlayer width={isColumn ? '80%' : 400} height={226} key={i} url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} />)}
       </div>
       <CardStyled AllEpisodes href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" noreferrer="true">
         <FaVideo style={{ fontSize: "5rem" }} />
@@ -39,11 +44,22 @@ const YouTube = () => {
           on YouTube
         </p>
       </CardStyled>
-    </div>
+    </YouTubeStyled>
   );
 };
 
 export default YouTube;
+
+const YouTubeStyled = styled.div`
+  .video-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    @media (max-width: ${VIDEO_SECTION_MAX_WIDTH}px) {
+      grid-template-columns: 1fr;
+    }
+  }
+`
 
 const CardStyled = styled.a`
   display: flex;
@@ -54,7 +70,6 @@ const CardStyled = styled.a`
   font-size: 3em;
   font-weight: 800;
   color: ${(props) => (props.YouTube ? theme.colors.red : props.AllEpisodes ? "dodgerblue" : "black")};
-
   .YouTubeSubscribe {
     color: red;
   }
