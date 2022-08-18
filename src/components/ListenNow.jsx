@@ -15,7 +15,7 @@ import "./ListenNow.scss";
 export const ListenNow = () => {
   const { isLoaded, setIsLoaded, podcasts, setPodcasts, currentPodcast, setCurrentPodcast, autoPlay, setAutoPlay } = useContext(StoreContext);
 
-  const iconSize = 90;
+  const iconSize = 60;
 
   const PODCAST_HOSTING = [
     {
@@ -85,7 +85,8 @@ export const ListenNow = () => {
         ))}
       </section>
       <div className="podcast-player">
-        {currentPodcast !== "" && isLoaded && (
+          <h2>Listen Now</h2>
+          {currentPodcast !== "" && isLoaded && (
           <div className="now-playing">
             <div className="now-playing-content">
               {/* <img
@@ -97,7 +98,6 @@ export const ListenNow = () => {
                 <Logo color="black" width="200px" />
               </div>
               <div>
-                <h2>Listen Now</h2>
                 <div className="now-playing-text">
                   <strong>Now playing:</strong> {currentPodcast.title[0]} <Moment format="dddd, MMMM Do YYYY">{currentPodcast.pubDate[0]}</Moment>{" "}
                 </div>
