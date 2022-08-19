@@ -35,6 +35,7 @@ export const MenuStyled = styled.nav`
       list-style: none;
       display: flex;
       justify-content: center;
+      padding: 0;
     }
 
     a {

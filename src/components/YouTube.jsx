@@ -26,24 +26,25 @@ const YouTube = () => {
 
   return (
     <YouTubeStyled style={{ backgroundColor: theme.colors.lightGrey, display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <h2 style={{ fontSize: "5em", marginTop: "100px", marginBottom: "10px" }}>YouTube</h2>
-      <p style={{ fontSize: "1.2em", marginBottom: "10px" }}>All podcast episodes are also available on YouTube</p>
-      <CardStyled YouTube href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg?sub_confirmation=1" target="_blank" noreferrer="true">
-        <FaYoutube style={{ fontSize: "12rem" }} />
-        <p>Subscribe</p>
-      </CardStyled>
-      <p style={{ fontWeight: "bold", fontSize: "3em", marginTop: 0, marginBottom: "50px" }}>Recent episodes:</p>
-      <div className="video-grid">
-        {videos && videos.map((video, i) => <ReactPlayer width={isColumn ? '80%' : 400} height={226} key={i} url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} />)}
+      <h2 style={{ fontSize: "4rem", marginTop: "100px", marginBottom: "10px" }}>YouTube</h2>
+      <p style={{ fontSize: "1.2em", marginBottom: "10px", textAlign: 'center' }}>All podcast episodes are available on YouTube</p>
+      <div style={{display: 'flex', gap: '4rem', alignItems: 'start', justifyContent: 'center', padding: '2rem'}}>
+        <CardStyled YouTube href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg?sub_confirmation=1" target="_blank" noreferrer="true">
+          <FaYoutube style={{ fontSize: "5rem" }} />
+          <p>Subscribe</p>
+        </CardStyled>
+        <CardStyled AllEpisodes href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" noreferrer="true">
+          <FaVideo style={{ fontSize: "5rem" }} />
+          <p style={{ textAlign: "center", marginTop: "0.5em", fontSize: '1rem' }}>
+            View all episodes
+          </p>
+        </CardStyled>
       </div>
-      <CardStyled AllEpisodes href="https://www.youtube.com/playlist?list=PLH0ttkxfOyIcym5Ngnc0XsK8EqeAMJ49v" target="_blank" noreferrer="true">
-        <FaVideo style={{ fontSize: "5rem" }} />
-        <p style={{ textAlign: "center", marginTop: "0.5em" }}>
-          View all episodes
-          <br />
-          on YouTube
-        </p>
-      </CardStyled>
+      <p style={{ textAlign: 'center', fontWeight: "bold", fontSize: "2.5em", marginTop: 0, marginBottom: "50px" }}>Recent episodes:</p>
+      <div className="video-grid">
+        {videos && videos.map((video, i) => <ReactPlayer width={isColumn ? '85%' : 400} height={isColumn ? '85%' : 226} key={i} url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} />)}
+      </div>
+      
     </YouTubeStyled>
   );
 };
@@ -51,8 +52,10 @@ const YouTube = () => {
 export default YouTube;
 
 const YouTubeStyled = styled.div`
+  padding-inline: 2rem;
   .video-grid {
     display: grid;
+    justify-items: center;
     gap: 30px;
     grid-template-columns: 1fr 1fr;
     @media (max-width: ${VIDEO_SECTION_MAX_WIDTH}px) {
@@ -66,15 +69,14 @@ const CardStyled = styled.a`
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  margin: ${(props) => (props.YouTube ? "0.5em auto 2em" : props.AllEpisodes ? "2em auto 2em" : null)};
-  font-size: 3em;
+  font-size: 1.5rem;
   font-weight: 800;
   color: ${(props) => (props.YouTube ? theme.colors.red : props.AllEpisodes ? "dodgerblue" : "black")};
   .YouTubeSubscribe {
     color: red;
   }
   .AllEpisodes {
-    color: dodgerblue;
+    color: red;
   }
   p {
     text-transform: uppercase;
