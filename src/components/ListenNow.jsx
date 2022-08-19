@@ -7,10 +7,10 @@ import { parseString } from "xml2js";
 import { FaSpotify } from "react-icons/fa";
 import { SiGooglepodcasts, SiAnchor, SiPocketcasts, SiApplepodcasts } from "react-icons/si";
 
-import { Logo } from "../img/Logo";
 import { StoreContext } from "../Context";
 
-import "./ListenNow.scss";
+import styled from "styled-components";
+import { useIsMobile } from "./useIsMobile";
 
 export const ListenNow = () => {
   const { isLoaded, setIsLoaded, podcasts, setPodcasts, currentPodcast, setCurrentPodcast, autoPlay, setAutoPlay } = useContext(StoreContext);
@@ -71,10 +71,12 @@ export const ListenNow = () => {
     setAutoPlay(true);
   };
 
+  const isMobile = useIsMobile();
+
   return (
-    <section className="podcast-player-container">
+    <StyledListenNow isMobile={isMobile}>
       <h2>Podcast</h2>
-      <p style={{ fontSize: "1.2em" }}>The Health Science Coach Podcast is available on these popular podcast apps</p>
+      <p style={{ fontSize: "1.2em" }}>The Health Science Coach Podcast is available on these popular podcast apps:</p>
       <section className="podcast-hosts">
         {PODCAST_HOSTING.map((pod, i) => (
           <article tooltip={pod.name} className="podcast-host" key={i}>
@@ -95,7 +97,6 @@ export const ListenNow = () => {
                     className="podcast-logo"
                   /> */}
               <div style={{ padding: "1em" }}>
-                <Logo color="black" width="200px" />
               </div>
               <div>
                 <div className="now-playing-text">
@@ -134,6 +135,157 @@ export const ListenNow = () => {
           )}
         </ul>
       </div>
-    </section>
+    </StyledListenNow>
   );
 };
+
+const StyledListenNow = styled.section`
+  background-color: #fafafa;
+  padding-top: ${(props)=>props.isMobile ? '20rem' : '3em'};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-size: 5em;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  p {
+    margin-bottom: 70px;
+    margin-top: 0;
+    margin-inline: 1rem;
+    text-align: center;
+  }
+
+.podcast-player {
+  max-width: 800px;
+  background-color: #f0f3f4;
+  min-width: 20em;
+  margin: auto;
+  border-radius: 0.5em;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  ul {
+    margin: auto;
+  }
+  li {
+    border-bottom: 1px solid #333;
+    margin-bottom: 1em;
+    &:nth-last-of-type(1) {
+      border-bottom: none;
+    }
+  }
+  h3 {
+    margin-top: 0.5em;
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1.5rem;
+  }
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f0f3f4;
+  padding: 1em;
+}
+
+.episode-listing {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 70%;
+}
+
+.now-playing {
+  color: white;
+  max-width: 100vw;
+  
+  .now-playing-content {
+    padding: 1em;
+    display: flex;
+    background: #43cea2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #185a9d, #43cea2); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, royalblue, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .now-playing-text {
+    background: rgba(0, 0, 0, 0.267);
+    width: 23rem;
+    padding: 2rem;
+    margin-inline-start: 2rem;
+    margin-block-start: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    width: 80%;
+    padding: 1rem;
+  }
+}
+
+.episodes-list {
+  height: 30em;
+  overflow-y: scroll;
+}
+
+.play-button {
+  cursor: pointer;
+  margin: 2em;
+  color: dodgerblue;
+  font-size: 1.5em;
+}
+
+.podcast-date {
+  color: #6a6a6a;
+  font-style: italic;
+}
+
+.podcast-logo {
+  width: 9em;
+  height: 9em;
+  margin-right: 2em;
+}
+
+.podcast-hosts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100vw;
+  padding-bottom: 5em;
+}
+
+.podcast-host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.podcast-host[tooltip] {
+  position: relative;
+}
+
+.podcast-host[tooltip]::before {
+  content: attr(tooltip);
+  position: absolute;
+  bottom: 0;
+  background: #555;
+  color: white;
+  font-size: 1em;
+  white-space: nowrap;
+  z-index: 100;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  transform: scale(0);
+  transition: transform ease-out 150ms, bottom ease-out 150ms;
+}
+.podcast-host[tooltip]:hover::before {
+  transform: scale(1) translateY(35px);
+}
+
+`;

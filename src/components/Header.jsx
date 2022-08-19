@@ -38,7 +38,7 @@ export const Header = () => {
   const isMobile = useMediaQuery({ query: `(max-width: ${WIDTH}px)` })
   
   return (
-    <HeaderStyled>
+    <HeaderStyled isMobile={isMobile}>
       <div style={{ width: "200px", height: "18px", backgroundColor: "red", marginBottom: "5px", marginLeft: "15px", borderRadius: "2px" }} />
       <div className="header-top">
         <Link to="/">
@@ -90,8 +90,12 @@ const HeaderStyled = styled.header`
       }
       .social-links {
         padding: 0;
-        margin-right: 1em;
+        margin-right: ${(props)=> props.isMobile ? 0 : '1em'};
         margin-top: 1em;
+        width: 100%;
+        display: flex;
+        justify-content: ${(props)=> props.isMobile ? 'center' : 'end'};
+
         svg {
           font-size: 1.9em;
           margin: auto 0.4em;
