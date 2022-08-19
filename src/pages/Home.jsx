@@ -4,12 +4,14 @@ import { GetInTouch } from "../components/GetInTouch";
 import { Hero } from "../components/Hero";
 import { ListenNow } from "../components/ListenNow";
 import YouTube from "../components/YouTube";
+import {LogoHero} from "../components/LogoHero";
 
 import "./Home.scss";
 
 export const Home = () => {
   return (
     <HomeContainer>
+      <LogoHero className="section" />
       <Hero className="section" />
       <ListenNow className="section" />
       <YouTube className="section" />

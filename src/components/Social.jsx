@@ -1,6 +1,6 @@
 import { FaTwitter, FaFacebook, FaInstagramSquare, FaYoutube, FaLinkedin } from "react-icons/fa";
 
-export const Social = () => {
+export const Social = ({isMobile}) => {
   return (
     <div className="social-links">
       <a href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg" target="_blank" rel="noreferrer">

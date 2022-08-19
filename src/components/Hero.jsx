@@ -5,6 +5,31 @@ import Graduation from "../img/graduation.jpg";
 import { theme, SmallScreen } from "../theme";
 import { FaCheckCircle } from "react-icons/fa";
 
+const SkillItem = ({title}) => {
+  return (
+    <li>
+      <StyledCheck>
+        <FaCheckCircle color="#333" />
+      </StyledCheck>
+      {title}
+    </li>
+  )
+}
+
+const StyledCheck = styled.div`
+  width: 30px;
+  height: 30px;
+`;
+
+const SKILLS = [
+  "Careers in Healthcare and Sports Medicine",
+  "Student Experiences in High School and College",
+  "University and College Programs and Degrees",
+  "Non-Traditional Pathways",
+  "Continuing Education Units",
+  "Health Career Events, and more",
+]
+
 export const Hero = () => {
   return (
     <HeroContainer theme={theme}>
@@ -17,26 +42,10 @@ export const Hero = () => {
 
         <Fancy>
           <div className="focus-list">
-            <h3>Listeners will learn about:</h3>
             <ul>
-              <li>
-                <FaCheckCircle /> Careers in Healthcare and Sports Medicine
-              </li>
-              <li>
-                <FaCheckCircle /> Student Experiences in High School and College
-              </li>
-              <li>
-                <FaCheckCircle /> University and College Programs and Degrees
-              </li>
-              <li>
-                <FaCheckCircle /> Non-Traditional Pathways
-              </li>
-              <li>
-                <FaCheckCircle /> Continuing Education Units
-              </li>
-              <li>
-                <FaCheckCircle /> Health Career Events, and more
-              </li>
+              {SKILLS.map((s, i)=> (
+                <SkillItem key={i} title={s} />
+              ))}
             </ul>
           </div>
         </Fancy>

@@ -19,6 +19,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   margin-bottom: 30px;
   h2 {
     margin-top: 50px;
