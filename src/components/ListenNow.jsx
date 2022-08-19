@@ -10,7 +10,7 @@ import { SiGooglepodcasts, SiAnchor, SiPocketcasts, SiApplepodcasts } from "reac
 import { StoreContext } from "../Context";
 
 import styled from "styled-components";
-import { useIsMobile } from "./useIsMobile";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 export const ListenNow = () => {
   const { isLoaded, setIsLoaded, podcasts, setPodcasts, currentPodcast, setCurrentPodcast, autoPlay, setAutoPlay } = useContext(StoreContext);
@@ -141,7 +141,7 @@ export const ListenNow = () => {
 
 const StyledListenNow = styled.section`
   background-color: #fafafa;
-  padding-top: ${(props)=>props.isMobile ? '20rem' : '3em'};
+  padding-top: ${(props)=>props.isMobile ? '10rem' : '3em'};
   display: flex;
   flex-direction: column;
   align-items: center;

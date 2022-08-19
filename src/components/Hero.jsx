@@ -7,34 +7,42 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const SkillItem = ({title}) => {
   return (
-    <li>
-      <StyledCheck>
-        <FaCheckCircle color="#333" />
-      </StyledCheck>
-      {title}
-    </li>
+      <StyledItem>
+        <div className="check">
+          <FaCheckCircle color="#333" />
+        </div>
+        {title}
+      </StyledItem>
   )
 }
 
-const StyledCheck = styled.div`
-  width: 30px;
-  height: 30px;
+const StyledItem = styled.li`
+  color: #222;
+  display: flex;
+  align-items: center;
+  .check {
+      display: grid;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      margin-inline-end: 0.25rem;
+    }
 `;
 
 const SKILLS = [
-  "Careers in Healthcare and Sports Medicine",
-  "Student Experiences in High School and College",
-  "University and College Programs and Degrees",
-  "Non-Traditional Pathways",
-  "Continuing Education Units",
-  "Health Career Events, and more",
+  "Careers in healthcare and sports medicine",
+  "Student experiences in highschool and college",
+  "University and college programs and degrees",
+  "Non-traditional pathways",
+  "Continuing education units",
+  "Health career events, and more",
 ]
 
 export const Hero = () => {
   return (
     <HeroContainer theme={theme}>
       <div className="graduation">
-        <p className="tagline">A podcast to help students and parents learn about pathways into Healthcare and sports medicine careers</p>
+        <p className="tagline">A podcast to help students and parents learn about pathways into healthcare and sports medicine careers</p>
         {/* TODO: SMALLER IMAGE */}
         <SmallScreen>
           <img style={{ width: "90%" }} src={Graduation} alt="Graduation" />;
@@ -60,18 +68,19 @@ const HeroContainer = styled.div.attrs((props) => ({ theme: props.theme }))`
   align-items: center;
 
   .tagline {
-    margin-top: 1.5em;
-    margin-bottom: 1em;
-    font-size: 40px;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 2.25rem;
     font-weight: 800;
     font-family: "Inter", sans-serif;
     color: white;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
+    transform: translateY(70px);
     text-align: center;
-    padding: 1em;
+    padding: 1em 2em;
     width: 900px;
-    border-radius: 2px;
+    border-radius: 1rem;
     @media (max-width: ${theme.breakpoints.m}) {
       font-size: 30px;
       width: 90%;

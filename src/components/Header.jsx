@@ -1,10 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useMediaQuery } from 'react-responsive'
 
 import { Social } from "./Social";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 // import "./Header.scss";
 
@@ -35,7 +35,7 @@ const MENU_ITEMS = [
 export const WIDTH = '776'
 
 export const Header = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: ${WIDTH}px)` })
+  const isMobile = useIsMobile();
   
   return (
     <HeaderStyled isMobile={isMobile}>
@@ -60,7 +60,7 @@ export const Header = () => {
 
 const HeaderStyled = styled.header`
     margin-top: 1em;
-    padding-bottom: 2em;
+    /* padding-bottom: 2em; */
     /* position: relative; */
 
     h1 {
@@ -74,7 +74,6 @@ const HeaderStyled = styled.header`
       align-items: flex-start;
       justify-content: space-between;
       justify-items: center;
-      margin-bottom: 1em;
       @media(max-width: ${WIDTH}px) {
         flex-direction: column;
         gap: 1em;
@@ -91,7 +90,6 @@ const HeaderStyled = styled.header`
       .social-links {
         padding: 0;
         margin-right: ${(props)=> props.isMobile ? 0 : '1em'};
-        margin-top: 1em;
         width: 100%;
         display: flex;
         justify-content: ${(props)=> props.isMobile ? 'center' : 'end'};
@@ -101,7 +99,7 @@ const HeaderStyled = styled.header`
           margin: auto 0.4em;
           color: #666;
           &:hover {
-            color: dodgerblue;
+            color: #2E828A;
           }
         }
         
@@ -109,9 +107,9 @@ const HeaderStyled = styled.header`
     }
 
     .is-active {
-      color: dodgerblue;
+      color: #2E828A;
       &:hover {
-        color: dodgerblue;
+        color: #2E828A;
       }
     }
 `;

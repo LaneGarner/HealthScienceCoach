@@ -12,7 +12,7 @@ export const MobileMenu = ({items}) => {
     <>
       <MobileMenuStyled isOpen={isOpen}>
       <HamburgerStyled aria-label="expand menu" aria-expanded={isOpen} onClick={toggleMenu}>
-        {isOpen ? <FaChevronUp /> : <FaChevronDown /> }
+        <FaChevronDown style={{transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform ease-in-out 100ms'}} />
       </HamburgerStyled>
           <ul>
             {items.map((menuItem, i) => (
@@ -41,8 +41,8 @@ const HamburgerStyled = styled.button`
   margin: 1rem;
   z-index: 101;
   padding: 1rem;
-  background-color: none;
-  border: none;
+  background-color: #fafafa;
+  border: 1px solid #dadada;
   width: 3rem;
   border-radius: 0.3rem;
   display: flex;
@@ -62,21 +62,23 @@ export const MobileMenuStyled = styled.nav`
       display: flex;
       margin-right: 1rem;
       gap: 1rem;
-      padding: 0.5rem;
+      padding: 0.25rem;
+      padding-left: 2rem;
+      margin-top: 0.2rem;
       flex-direction: column;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
       align-items: flex-end;
-      background: #ffffffa1;
+      background-color: #ffffffe3;
+      border: 1px solid #dadada;
       transform: ${props=> !props.isOpen ? 'translateX(1000px)' : 'translateX(0px)'};
-      transition: transform linear 160ms;
+      transition: transform linear 200ms;
       border-radius: 0.3rem;
     }
 
     a {
       text-decoration: none;
-      color: black;
-      color: red;
-      padding: 1rem 2rem;
+      color: #333;
+      padding: 1rem;
       &:hover {
         color: #454545;
       }

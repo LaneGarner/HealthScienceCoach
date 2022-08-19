@@ -11,7 +11,7 @@ export const DesktopMenu = ({items}) => {
                 <NavLink
                   exact={menuItem.exact}
                   activeClassName="is-active"
-                  to={`"${menuItem.to}"`}
+                  to={menuItem.to}
                   // data-text="Home"
                 >
                   {menuItem.title}
@@ -25,9 +25,11 @@ export const DesktopMenu = ({items}) => {
 
 export const MenuStyled = styled.nav`
     .is-active {
-      color: dodgerblue;
+      color: #2E828A;
+      text-decoration-color: #454545;
       &:hover {
-        color: dodgerblue;
+        color: #2E828A;
+        text-decoration-color: #454545;
       }
     }
 
@@ -40,10 +42,14 @@ export const MenuStyled = styled.nav`
 
     a {
       text-decoration: none;
-      color: black;
+      color: #333;
+      text-decoration: underline;
+      text-decoration-color: transparent;
       &:hover {
         color: #454545;
+        text-decoration-color: #454545;
       }
+      transition: text-decoration-color linear 150ms;
     }
 
     li {

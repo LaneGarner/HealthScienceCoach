@@ -32,7 +32,6 @@ export const Episodes = () => {
               <Link to={`/podcast/${pod.guid[0]["_"]}`}>
                 <h2>{pod.title}</h2>
               </Link>
-              {console.log(pod["itunes:episode"])}
             </div>
           </div>
         ))
@@ -53,20 +52,26 @@ const EpisodesContainer = styled.div`
     color: black;
   }
   .right-content {
-    margin-top: 1em;
     margin-left: 0.5em;
   }
   h1 {
     margin-bottom: 2em;
   }
+  h2 {
+    font-size: 1.2rem;
+  }
   .episode-card {
-    width: 800px;
+    width: 85%;
     display: flex;
+    align-items: center;
     margin-bottom: 2.5em;
     padding-bottom: 2.5em;
     border-bottom: solid #333 1px;
+    margin-inline: 1rem;
     img {
       border-radius: 0.5em;
+      width: 5rem;
+      height: 5rem;
     }
     &:nth-last-of-type(1) {
       border-bottom: none;

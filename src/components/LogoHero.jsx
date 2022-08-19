@@ -6,7 +6,7 @@ export const LogoHero = () => {
   return (
     <Container>
       <StyledLogoContainer>
-        <Logo color="black" width="160px" />
+        <Logo color="#333" width="120px" />
       </StyledLogoContainer>
       <StyledSvgContainer>
         <svg
@@ -21,7 +21,6 @@ export const LogoHero = () => {
           <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
         </svg>
       </StyledSvgContainer>
-
     </Container>
   );
 };
@@ -44,10 +43,10 @@ const StyledSvgContainer = styled.div`
 const StyledLogoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  
   align-items: center;
-  z-index: 100;
   svg {
-    transform: translateY(1rem);
+    transform: translateY(2rem);
+    z-index: 1;
+    color: #333;
   }
 `;
