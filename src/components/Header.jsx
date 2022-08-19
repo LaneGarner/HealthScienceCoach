@@ -1,11 +1,42 @@
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { useMediaQuery } from 'react-responsive'
 
 import { Social } from "./Social";
+import { DesktopMenu } from "./DesktopMenu";
+import { MobileMenu } from "./MobileMenu";
 
 // import "./Header.scss";
 
+const MENU_ITEMS = [
+  {
+    title: 'Home',
+    to: "/",
+    exact: true,
+  },
+  {
+    title: 'Episodes',
+    to: "/episodes",
+  },
+  {
+    title: 'About',
+    to: "/about",
+  },
+  // {
+  //   title: 'Sponsors',
+  //   to: "/sponsors"
+  // },
+  {
+    title: 'Contact',
+    to: "/contact",
+  },
+]
+
+export const WIDTH = '776'
+
 export const Header = () => {
+  const isMobile = useMediaQuery({ query: `(max-width: ${WIDTH}px)` })
+  
   return (
     <HeaderStyled>
       <div style={{ width: "200px", height: "18px", backgroundColor: "red", marginBottom: "5px", marginLeft: "15px", borderRadius: "2px" }} />
@@ -19,41 +50,10 @@ export const Header = () => {
         </Link>
         <Social />
       </div>
-
-      <nav>
-        <ul>
-          <li>
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              to="/"
-              // data-text="Home"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="is-active" to="/episodes">
-              Episodes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="is-active" to="/about">
-              About
-            </NavLink>
-          </li>
-          {/* <li>
-            <NavLink activeClassName="is-active" to="/sponsors">
-              Sponsors
-            </NavLink>
-          </li> */}
-          <li>
-            <NavLink activeClassName="is-active" to="/contact">
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+      {isMobile ? 
+        <MobileMenu items={MENU_ITEMS}/>  : 
+        <DesktopMenu items={MENU_ITEMS} />
+      }
     </HeaderStyled>
   );
 };
@@ -61,6 +61,7 @@ export const Header = () => {
 const HeaderStyled = styled.header`
     margin-top: 1em;
     padding-bottom: 2em;
+    /* position: relative; */
 
     h1 {
       text-transform: uppercase;
@@ -74,6 +75,11 @@ const HeaderStyled = styled.header`
       justify-content: space-between;
       justify-items: center;
       margin-bottom: 1em;
+      @media(max-width: ${WIDTH}px) {
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 0;
+      }
       a {
         text-decoration: none;
         color: black;
@@ -94,6 +100,7 @@ const HeaderStyled = styled.header`
             color: dodgerblue;
           }
         }
+        
       }
     }
 
@@ -101,30 +108,6 @@ const HeaderStyled = styled.header`
       color: dodgerblue;
       &:hover {
         color: dodgerblue;
-      }
-    }
-  }
-
-  nav {
-    position: sticky;
-    ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-
-      a {
-        text-decoration: none;
-        color: black;
-        &:hover {
-          color: #454545;
-        }
-      }
-    }
-    li {
-      padding-right: 3em;
-      font-size: 1.1em;
-      &:nth-last-of-type(1) {
-        padding-right: 0;
       }
     }
 `;
