@@ -75,8 +75,8 @@ export const ListenNow = () => {
 
   return (
     <StyledListenNow isMobile={isMobile}>
-      <h2>Podcast</h2>
-      <p style={{ fontSize: "1.2em" }}>The Health Science Coach Podcast is available on these popular podcast apps:</p>
+      {/* <h2>Podcast</h2> */}
+      <p style={{ fontSize: "1.2em" }}>The Health Science Coach Podcast is available on these popular podcast apps</p>
       <section className="podcast-hosts">
         {PODCAST_HOSTING.map((pod, i) => (
           <article tooltip={pod.name} className="podcast-host" key={i}>
@@ -87,22 +87,21 @@ export const ListenNow = () => {
         ))}
       </section>
       <div className="podcast-player">
-          <h2>Listen Now</h2>
           {currentPodcast !== "" && isLoaded && (
           <div className="now-playing">
             <div className="now-playing-content">
-              {/* <img
-                    src={currentPodcast["itunes:image"][0].$.href}
-                    alt="health science coach logo"
-                    className="podcast-logo"
-                  /> */}
-              <div style={{ padding: "1em" }}>
-              </div>
-              <div>
-                <div className="now-playing-text">
-                  <strong>Now playing:</strong> {currentPodcast.title[0]} <Moment format="dddd, MMMM Do YYYY">{currentPodcast.pubDate[0]}</Moment>{" "}
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                  <img
+                        src={currentPodcast["itunes:image"][0].$.href}
+                        alt="health science coach logo"
+                        className="podcast-logo"
+                      />
+                  <h2>Listen now</h2>
                 </div>
-              </div>
+                <div className="now-playing-text">
+                  <div className="now-playing-label">Now playing: </div>
+                  <div className="podcast-scroll">{currentPodcast.title[0]} <Moment format="dddd, MMMM Do YYYY">{currentPodcast.pubDate[0]}</Moment>{" "}</div>
+                </div>
             </div>
             <div className="player">
               <ReactAudioPlayer src={currentPodcast.enclosure[0].$.url} controls style={{ width: "89%", color: "white" }} autoPlay={autoPlay} />
@@ -125,7 +124,9 @@ export const ListenNow = () => {
                     <Moment className="podcast-date" format="dddd, MMMM Do YYYY">
                       {podcast.pubDate[0]}
                     </Moment>
-                    <h3>{podcast.title[0]}</h3>
+                    <h3>
+                      {currentPodcast.title}
+                    </h3>
                   </div>
                 </div>
               </li>
@@ -140,15 +141,12 @@ export const ListenNow = () => {
 };
 
 const StyledListenNow = styled.section`
-  background-color: #fafafa;
-  padding-top: ${(props)=>props.isMobile ? '10rem' : '3em'};
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-top: 2rem;
   h2 {
-    font-size: 5em;
-    margin-bottom: 10px;
-    margin-top: 0;
+    font-size: 3rem;
   }
   p {
     margin-bottom: 70px;
@@ -158,12 +156,13 @@ const StyledListenNow = styled.section`
   }
 
 .podcast-player {
-  max-width: 800px;
   background-color: #f0f3f4;
-  min-width: 20em;
-  margin: auto;
-  border-radius: 0.5em;
+  border-radius: 1rem;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 800px;
+  min-width: 20em;
+  width: 90%;
   ul {
     margin: auto;
   }
@@ -175,20 +174,19 @@ const StyledListenNow = styled.section`
     }
   }
   h3 {
-    margin-top: 0.5em;
+    margin-top: 0.25em;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 4rem;
     text-align: center;
-    margin: 1.5rem;
   }
 }
 
 .player {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background: #f0f3f4;
+  display: flex;
+  flex-direction: column;
   padding: 1em;
 }
 
@@ -197,6 +195,7 @@ const StyledListenNow = styled.section`
   align-items: flex-start;
   flex-direction: column;
   width: 70%;
+  margin-bottom: 1rem;
 }
 
 .now-playing {
@@ -204,28 +203,30 @@ const StyledListenNow = styled.section`
   max-width: 100vw;
   
   .now-playing-content {
-    padding: 1em;
     display: flex;
     background: #43cea2; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #185a9d, #43cea2); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, royalblue, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-top-left-radius: 0.4em;
-    border-top-right-radius: 0.4em;
-    margin: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     display: flex;
     flex-wrap: wrap;
-
+    white-space: nowrap;
+    overflow: hidden;
   }
   .now-playing-text {
-    background: rgba(0, 0, 0, 0.267);
-    width: 23rem;
-    padding: 2rem;
-    margin-inline-start: 2rem;
-    margin-block-start: 1rem;
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 0.5rem;
-    font-size: 1.3rem;
-    width: 80%;
+    font-size: 1.1rem;
+    display: flex;
+    position: relative;
+  }
+  .now-playing-label {
+    z-index: 101;
+    background:#444444;
     padding: 1rem;
+    font-weight: bold;
+    font-family: inherit;x
   }
 }
 
@@ -242,13 +243,14 @@ const StyledListenNow = styled.section`
 }
 
 .podcast-date {
-  color: #6a6a6a;
+  color: #7d7d7d;
   font-style: italic;
+  font-size: 0.9rem;
 }
 
 .podcast-logo {
-  width: 9em;
-  height: 9em;
+  width: 9rem;
+  height: 9rem;
   margin-right: 2em;
 }
 
@@ -288,4 +290,26 @@ const StyledListenNow = styled.section`
   transform: scale(1) translateY(35px);
 }
 
+  @keyframes scroll-left {
+    0% { 
+    transform: translateX(0%); 
+    }
+    30% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .podcast-scroll {
+    animation: scroll-left 10s linear infinite;
+    z-index: 100;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    padding-left: 2.5rem;
+    font-size: 1rem;
+    gap: 1rem;
+  } 
 `;

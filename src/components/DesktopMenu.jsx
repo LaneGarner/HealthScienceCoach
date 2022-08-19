@@ -25,11 +25,9 @@ export const DesktopMenu = ({items}) => {
 
 export const MenuStyled = styled.nav`
     .is-active {
-      color: #2E828A;
-      text-decoration-color: #454545;
+      text-decoration-color: #2E828A;;
       &:hover {
-        color: #2E828A;
-        text-decoration-color: #454545;
+        text-decoration-color: #2E828A;;
       }
     }
 
@@ -41,9 +39,7 @@ export const MenuStyled = styled.nav`
     }
 
     a {
-      text-decoration: none;
       color: #333;
-      text-decoration: underline;
       text-decoration-color: transparent;
       &:hover {
         color: #454545;

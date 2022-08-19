@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export const GetInTouch = () => {
   return (
     <Container>
-      <h2>Get In Touch</h2>
+      <h2>Get in touch 👋</h2>
       <div className="contact">
         <p>
-          If you're interested in sharing your <strong>“WHY”</strong>, please <Link to="/contact">contact me</Link>.
+          If you're interested in sharing your <strong>“WHY”</strong><wbr></wbr> please <Link to="/contact">reach out</Link>
         </p>
       </div>
     </Container>
@@ -25,11 +25,12 @@ const Container = styled.div`
   h2 {
     margin-top: 50px;
     margin-bottom: 10px;
-    font-size: 5em;
+    font-size: 3rem;
   }
   a {
-    color: dodgerblue;
+    /* color: dodgerblue; */
   }
   p {
+    margin-inline: 1rem;
   }
 `;

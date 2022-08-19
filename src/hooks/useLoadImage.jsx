@@ -12,5 +12,5 @@ export const useLoadImage = (ref) => {
     }
   },[ref.current?.complete])
 
-  return [loading];
+  return loading;
 };

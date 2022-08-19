@@ -26,9 +26,9 @@ const YouTube = () => {
 
   return (
     <YouTubeStyled style={{ backgroundColor: theme.colors.lightGrey, display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <h2 style={{ fontSize: "4rem", marginTop: "100px", marginBottom: "10px" }}>YouTube</h2>
-      <p style={{ fontSize: "1.2em", marginBottom: "10px", textAlign: 'center' }}>All podcast episodes are available on YouTube</p>
-      <div style={{display: 'flex', gap: '4rem', alignItems: 'start', justifyContent: 'center', padding: '2rem'}}>
+      <p style={{ fontSize: "1.1rem", marginTop: "100px", marginBottom: '1rem', textAlign: 'center' }}>All podcast episodes are available on</p>
+      <h2 style={{ fontSize: "3rem", marginBottom: "10px", marginBottom: "10px" }}>YouTube</h2>
+      <div style={{display: 'flex', columnGap: '7rem', rowGap: '4rem', alignItems: 'start', justifyContent: 'center', padding: '2rem', flexWrap: 'wrap'}}>
         <CardStyled YouTube href="https://www.youtube.com/channel/UCyYO0_xENmD9bZRSPo9Lveg?sub_confirmation=1" target="_blank" noreferrer="true">
           <FaYoutube style={{ fontSize: "5rem" }} />
           <p>Subscribe</p>
@@ -40,7 +40,7 @@ const YouTube = () => {
           </p>
         </CardStyled>
       </div>
-      <p style={{ textAlign: 'center', fontWeight: "bold", fontSize: "2.5em", marginTop: 0, marginBottom: "50px" }}>Recent episodes:</p>
+      <p style={{ textAlign: 'center', fontWeight: "bold", fontSize: "1.75rem", marginBlock: "3rem" }}>Recent episodes</p>
       <div className="video-grid">
         {videos && videos.map((video, i) => <ReactPlayer width={isColumn ? '85%' : 400} height={isColumn ? '85%' : 226} key={i} url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} />)}
       </div>
@@ -56,7 +56,7 @@ const YouTubeStyled = styled.div`
   .video-grid {
     display: grid;
     justify-items: center;
-    gap: 30px;
+    gap: 2rem;
     grid-template-columns: 1fr 1fr;
     @media (max-width: ${VIDEO_SECTION_MAX_WIDTH}px) {
       grid-template-columns: 1fr;

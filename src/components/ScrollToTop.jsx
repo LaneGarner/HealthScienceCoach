@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FaChevronUp } from 'react-icons/fa';
+import { FaArrowUp, FaChevronUp } from 'react-icons/fa';
 import styled from 'styled-components'
 
 export const ScrollToTop = () => {
@@ -19,7 +19,7 @@ export const ScrollToTop = () => {
 
   return (
     <StyledScrollToTop title="Scroll to top" onClick={scrollToTop} scrollHeight={scrollHeight}>
-      <FaChevronUp />
+      <FaArrowUp />
     </StyledScrollToTop>
   );
 };

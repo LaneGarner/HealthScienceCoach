@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { useIsMobile } from "../hooks/useIsMobile";
 import { Logo } from "../img/Logo";
 
 export const LogoHero = () => {
+  const isMobile = useIsMobile();
   return (
     <Container>
-      <StyledLogoContainer>
+      <StyledLogoContainer isMobile={isMobile}>
         <Logo color="#333" width="120px" />
       </StyledLogoContainer>
-      <StyledSvgContainer>
+      {!isMobile && <StyledSvgContainer>
         <svg
           className="curve"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,19 +22,19 @@ export const LogoHero = () => {
         >
           <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
         </svg>
-      </StyledSvgContainer>
+      </StyledSvgContainer>}
     </Container>
   );
 };
 
 const Container = styled.div`
-  position: relative;
   background-color: white;
+  position: relative;
   .curve {
-    fill: white;
-    position: absolute;
-    left: 0;
     bottom: 0;
+    fill: white;
+    left: 0;
+    position: absolute;
   }
 `;
 
@@ -41,12 +43,13 @@ const StyledSvgContainer = styled.div`
 `;
 
 const StyledLogoContainer = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-block:  ${(props) => props.isMobile ? '1rem' : 0};
   svg {
-    transform: translateY(2rem);
-    z-index: 1;
     color: #333;
+    transform:  ${(props) => props.isMobile ? 0 : 'translateY(2rem)'};
+    z-index: 1;
   }
 `;

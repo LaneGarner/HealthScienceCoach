@@ -5,14 +5,14 @@ export const Fancy = ({ children }) => {
 };
 
 const FancyContainer = styled.div`
-  background: #ff0000cc;
+  align-items: center;
   backdrop-filter: blur(5px);
-  width: 100vw;
+  background: #ff0000cc;
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100px;
   justify-content: center;
-  margin-top: 150px;
   margin-bottom: 150px;
+  margin-top: 150px;
+  width: 100vw;
 `;

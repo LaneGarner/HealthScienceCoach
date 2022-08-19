@@ -6,7 +6,7 @@ export const About = () => {
     <div className="page-container about-page">
       <Image src="https://healthsciencecoach.com/img/health-career-podcast.png" 
           alt="Drew Garner hosting health science coach podcast with yellow geometric design in background" 
-          style={{maxWidth: '750px', width: "80%", aspectRatio: 'auto 576 / 239'}} 
+          style={{maxWidth: '750px', width: "80%", aspectRatio: 'auto 576 / 239',  borderRadius: '1rem'}} 
         />
       <p className="hey-coach">"Hey Coach Garner, how do I become a nurse practitioner?"</p>
       <p className="about-description">

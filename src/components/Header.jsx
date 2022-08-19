@@ -107,9 +107,9 @@ const HeaderStyled = styled.header`
     }
 
     .is-active {
-      color: #2E828A;
+      /* color: #2E828A; */
       &:hover {
-        color: #2E828A;
+        /* color: #2E828A; */
       }
     }
 `;
