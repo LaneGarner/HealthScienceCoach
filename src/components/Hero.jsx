@@ -45,7 +45,7 @@ export const Hero = () => {
         <p className="tagline">A podcast to help students and parents learn about pathways into healthcare and sports medicine careers</p>
         {/* TODO: SMALLER IMAGE */}
         <SmallScreen>
-          <img style={{ width: "90%" }} src={Graduation} alt="Graduation" />;
+          <img style={{ marginTop: '2rem', width: "90%" }} src={Graduation} alt="Graduation" />
         </SmallScreen>
 
         <Fancy>
