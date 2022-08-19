@@ -16,6 +16,7 @@ export const About = () => {
         Turner High School and a partnership with Kansas City Kansas Community College certifying students as Nursing Assistants and Medical Aids when graduating from high school.
       </p>
       {/* <div style={{height: "700px", width: '100vw'}}><iframe src="https://outlook.office365.com/owa/calendar/HealthScienceCoachPodcast@turnerusd202.org/bookings/" width="100%" height="100%" scrolling="yes" style={{border:0}}></iframe></div> */}
+      {/* <div style={{height: "700px", width: '100vw'}}><iframe src="https://outlook.office365.com/owa/calendar/HealthScienceCoachPodcast@turnerusd202.org/bookings/" width="100%" height="100%" scrolling="yes" style={{border:0}}></iframe></div> */}
     </div>
   );
 };
