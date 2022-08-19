@@ -12,7 +12,7 @@ export const MobileMenu = ({items}) => {
     <>
       <MobileMenuStyled isOpen={isOpen}>
       <HamburgerStyled aria-label="expand menu" aria-expanded={isOpen} onClick={toggleMenu}>
-        <FaChevronDown style={{transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform ease-in-out 100ms'}} />
+        <FaChevronDown color="#333" style={{transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform ease-in-out 100ms'}} />
       </HamburgerStyled>
           <ul>
             {items.map((menuItem, i) => (
