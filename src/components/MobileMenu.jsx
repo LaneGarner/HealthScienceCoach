@@ -56,6 +56,7 @@ export const MobileMenuStyled = styled.nav`
     top: 0;
     z-index: 100;
     padding-top: 4em;
+    max-height: ${(props) => props.isOpen ? 'auto' : '3rem'};
 
     .is-active {
       text-decoration-color: #2E828A;;

@@ -107,9 +107,9 @@ export const ListenNow = () => {
               <ReactAudioPlayer src={currentPodcast.enclosure[0].$.url} controls style={{ width: "89%", color: "white" }} autoPlay={autoPlay} />
             </div>
           </div>
-        )}
-        <ul className="episodes-list" style={{ listStyle: "none" }}>
-          <h4>All Episodes</h4>
+          )}
+        <h4 style={{marginLeft: '2rem', paddingBottom: '1rem'}}>All Episodes</h4>
+        <ul className="episodes-list">
           {isLoaded ? (
             podcasts.map((podcast, index) => (
               <li key={index}>
@@ -132,10 +132,10 @@ export const ListenNow = () => {
               </li>
             ))
           ) : (
-            <li>not loaded</li>
+            <li>Loading...</li>
           )}
         </ul>
-      </div>
+        </div>
     </StyledListenNow>
   );
 };
@@ -168,13 +168,14 @@ const StyledListenNow = styled.section`
   }
   li {
     border-bottom: 1px solid #333;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     &:nth-last-of-type(1) {
       border-bottom: none;
     }
   }
   h3 {
     margin-top: 0.25em;
+    font-size: 1rem;
   }
   h2 {
     font-size: 4rem;
@@ -231,8 +232,10 @@ const StyledListenNow = styled.section`
 }
 
 .episodes-list {
-  height: 30em;
-  overflow-y: scroll;
+  height: 30rem;
+  padding-left: 0;
+  list-style: none;
+  overflow-y: auto;
 }
 
 .play-button {
