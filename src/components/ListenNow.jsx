@@ -92,10 +92,10 @@ export const ListenNow = () => {
             <div className="now-playing-content">
                 <div style={{display: 'flex', alignItems: 'center'}}>
                   <img
-                        src={currentPodcast["itunes:image"][0].$.href}
-                        alt="health science coach logo"
-                        className="podcast-logo"
-                      />
+                    src={currentPodcast["itunes:image"][0].$.href}
+                    alt="health science coach logo"
+                    className="podcast-logo"
+                  />
                   <h2>Listen now</h2>
                 </div>
                 <div className="now-playing-text">
@@ -125,7 +125,7 @@ export const ListenNow = () => {
                       {podcast.pubDate[0]}
                     </Moment>
                     <h3>
-                      {currentPodcast.title}
+                      {podcast.title}
                     </h3>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 export const Podcast = (props) => {
   const { podcasts, isLoaded } = useContext(StoreContext);
-  // podcasts.forEach((pod) => console.log(pod));
+  podcasts.forEach((pod) => console.log(pod));
   const currentPod = podcasts.find((pod) => pod.guid[0]["_"] === props.match.params.episode);
 
   return (
