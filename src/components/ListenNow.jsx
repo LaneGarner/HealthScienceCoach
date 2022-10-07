@@ -117,6 +117,7 @@ export const ListenNow = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
+                    paddingRight: '1rem'
                   }}
                 >
                   <FaPlay className="play-button" onClick={() => handlePlayNewPodcast(podcast)} />
@@ -178,7 +179,7 @@ const StyledListenNow = styled.section`
     font-size: 1rem;
   }
   h2 {
-    font-size: 4rem;
+    font-size: ${(props) => props.isMobile ? '2rem' : '4rem'};
     text-align: center;
   }
 }
@@ -242,7 +243,7 @@ const StyledListenNow = styled.section`
   cursor: pointer;
   margin: 2em;
   color: dodgerblue;
-  font-size: 1.5em;
+  font-size: ${(props)=> props.isMobile ? '1rem' : '1.5rem'};
 }
 
 .podcast-date {

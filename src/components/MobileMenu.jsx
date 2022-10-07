@@ -54,7 +54,7 @@ export const MobileMenuStyled = styled.nav`
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 100;
+    z-index: 102;
     padding-top: 4em;
     max-height: ${(props) => props.isOpen ? 'auto' : '3rem'};
 
